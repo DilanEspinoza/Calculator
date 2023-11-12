@@ -51,6 +51,7 @@ main {
 }
 
 .pantalla {
+  overflow: hidden;
   min-height: 84px;
   padding: 10px 20px;
   background-color: rgba(0, 0, 0, 0.548);
