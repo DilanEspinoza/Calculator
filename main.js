@@ -1,56 +1,59 @@
-const $pantalla = document.querySelector(".pantalla");
-const $botones = document.querySelectorAll(".botones");
-const $btnLimpiar = document.getElementById("limpiar");
-const $btnBorrar = document.getElementById("borrar");
-const $btnIgual = document.getElementById("btn-igual");
+const $screen = document.querySelector(".screen");
+const $buttons = document.querySelectorAll(".btn");
+const $btnClear = document.getElementById("clear");
+const $btnDelete = document.getElementById("delete");
+const $btnEqual = document.getElementById("btn-igual");
 
-$btnLimpiar.addEventListener("click", limpiarPantalla);
-$btnBorrar.addEventListener("click", borrar);
+$btnClear.addEventListener("click", clearScreen);
+$btnDelete.addEventListener("click", deleteLastCharacter);
+$btnEqual.addEventListener("click", calcularResultado);
 
-function agregarAPantalla(valor) {
-  if ($pantalla.textContent === "0") {
-    eliminarTodo();
+$buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    addToScreen(button.textContent);
+  });
+});
+
+function addToScreen(value) {
+  if ($screen.textContent === "0") {
+    deleteAll();
   }
-  $pantalla.textContent += valor;
+  $screen.textContent += value;
 }
 
-function eliminarTodo() {
-  $pantalla.textContent = "";
+function deleteAll() {
+  $screen.textContent = "";
 }
 
-function limpiarPantalla() {
-  $pantalla.textContent = "0";
+function clearScreen() {
+  $screen.textContent = "0";
 }
 
-function borrar() {
-  $pantalla.textContent = $pantalla.textContent.toString().slice(0, -1);
+function deleteLastCharacter() {
+  $screen.textContent = $screen.textContent.toString().slice(0, -1);
 }
 
-function suma(a, b) {
+function calcularResultado() {
+  try {
+    const resultado = eval($screen.textContent);
+    $screen.textContent = resultado;
+  } catch (e) {
+    $screen.textContent = "Error";
+  }
+}
+
+function add(a, b) {
   return a + b;
 }
 
-function resta(a, b) {
+function subtract(a, b) {
   return a - b;
 }
 
-function multiplicacion(a, b) {
+function multiply(a, b) {
   return a * b;
 }
 
-function division(a, b) {
+function divide(a, b) {
   return a / b;
 }
-
-// switch (operador) {
-//   case "+":
-//     return suma(a, b);
-//   case "-":
-//     return resta(a, b);
-//   case "×":
-//     return multiplicacion(a, b);
-//   case "÷":
-//     return division(a, b);
-//   default:
-//     return;
-// }
