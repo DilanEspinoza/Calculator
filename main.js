@@ -9,51 +9,35 @@ $btnDelete.addEventListener("click", deleteLastCharacter);
 $btnEqual.addEventListener("click", calcularResultado);
 
 $buttons.forEach((button) => {
-  button.addEventListener("click", () => {
-    addToScreen(button.textContent);
-  });
+	button.addEventListener("click", () => {
+		addToScreen(button.textContent);
+	});
 });
 
 function addToScreen(value) {
-  if ($screen.textContent === "0") {
-    deleteAll();
-  }
-  $screen.textContent += value;
+	if ($screen.textContent === "0") {
+		deleteAll();
+	}
+	$screen.textContent += value;
 }
 
 function deleteAll() {
-  $screen.textContent = "";
+	$screen.textContent = "";
 }
 
 function clearScreen() {
-  $screen.textContent = "0";
+	$screen.textContent = "0";
 }
 
 function deleteLastCharacter() {
-  $screen.textContent = $screen.textContent.toString().slice(0, -1);
+	$screen.textContent = $screen.textContent.toString().slice(0, -1);
 }
 
 function calcularResultado() {
-  try {
-    const resultado = eval($screen.textContent);
-    $screen.textContent = resultado;
-  } catch (e) {
-    $screen.textContent = "Error";
-  }
-}
-
-function add(a, b) {
-  return a + b;
-}
-
-function subtract(a, b) {
-  return a - b;
-}
-
-function multiply(a, b) {
-  return a * b;
-}
-
-function divide(a, b) {
-  return a / b;
+	try {
+		const resultado = eval($screen.textContent);
+		$screen.textContent = resultado;
+	} catch (e) {
+		$screen.textContent = "Error";
+	}
 }
