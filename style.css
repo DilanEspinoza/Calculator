@@ -1,109 +1,116 @@
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 }
 
 :root {
-  --color-body: #026842;
-  --buttons-primary--color: #013e28;
-  --color-bg-calculator: #00150d;
-  --color-text: #ffffff;
-  --color-bottuns: #012a1a;
-  --color-buttons-hover: #013e28;
+	--color-body: #026842;
+	--buttons-primary--color: #013e28;
+	--color-bg-calculator: #00150d;
+	--color-text: #ffffff;
+	--color-bottuns: #012a1a;
+	--color-buttons-hover: #013e28;
 }
 
 body {
-  background-color: var(--color-body);
-  min-height: 100vh;
+	background: url("assets/bg-image.jpg") center no-repeat;
+	background-size: cover;
+	min-height: 100vh;
 }
 
 main {
-  height: 85vh;
-  width: 80%;
-  margin: 0 auto;
-  min-height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	height: 85vh;
+	width: 80%;
+	margin: 0 auto;
+	min-height: 500px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .calculator {
-  background-color: var(--color-bg-calculator);
-  border-radius: 10px;
+	background-color: var(--color-bg-calculator);
+	background-color: rgba(255, 255, 255, 0.148);
+	backdrop-filter: invert(10px);
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px blueviolet;
 
-  display: flex;
-  flex-direction: column;
-  grid-gap: 20px;
-  padding: 20px;
-  margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	grid-gap: 20px;
+	padding: 20px;
+	margin-top: 30px;
 }
 
 .screen {
-  overflow: hidden;
-  min-height: 84px;
-  padding: 10px 20px;
-  background-color: rgba(0, 0, 0, 0.548);
-  color: white;
-  border: 1px solid black;
-  border-radius: 10px;
-  font-size: 30px;
+	overflow: hidden;
+	min-height: 84px;
+	padding: 10px 20px;
+	background-color: rgba(0, 0, 0, 0.548);
+	backdrop-filter: blur(10px);
+	color: white;
+	/* border: 1px solid black; */
+	border-radius: 10px;
+	font-size: 30px;
 
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
 }
 
 #delete,
 #clear {
-  grid-column: span 2;
-  width: auto;
-  background-color: var(--buttons-primary--color);
+	grid-column: span 2;
+	width: auto;
+	background-color: var(--buttons-primary--color);
+	background-color: rgb(0, 0, 0, 0.458);
 }
 
 .botones {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 15px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 15px;
 }
 button {
-  height: 70px;
-  width: 70px;
-  padding: 30px;
-  color: white;
-  background-color: var(--color-bottuns);
-  border-radius: 10px;
-  border: 1px solid black;
+	height: 70px;
+	width: 70px;
+	padding: 30px;
+	color: white;
 
-  font-size: 21px;
-  cursor: pointer;
-  outline: none;
+	background-color: rgb(0, 0, 0, 0.458);
+	backdrop-filter: blur(1px);
+	border: none;
 
-  backdrop-filter: blur(10px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	font-size: 21px;
+	cursor: pointer;
+	outline: none;
+
+	backdrop-filter: blur(10px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-
+/* 
 button:hover {
-  background-color: var(--buttons-primary--color);
+	background-color: var(--buttons-primary--color);
 }
-
+ */
 footer {
-  display: flex;
-  justify-content: center;
-  margin: 20px;
-  padding: 20px;
+	display: flex;
+	justify-content: center;
+	margin: 20px;
+	padding: 20px;
 }
 
 footer p {
-  font-size: 20px;
+	font-size: 20px;
 }
 
 .link {
-  color: var(--color-text);
-  text-decoration: none;
-  background-color: #00150d;
-  padding: 5px;
-  border-radius: 4px;
+	color: white;
+	font-size: 1.4rem;
+	text-decoration: none;
+	padding: 5px;
+	border-radius: 4px;
 }
